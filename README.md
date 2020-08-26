@@ -2,6 +2,12 @@
 
 自研`Adjoint Net`(伴随网络, 一开始基于paddle开发, 因框架存在bug导致gpu下不收敛,遂转向更为灵活成熟的torch),适用于基于向量近邻进行排序的结构化数据场景, 如推荐算法。
 
+需要环境：
+```
+torch==1.5.1
+faiss==1.6.3
+```
+
 网络由两个结构类似的`single`网络组成，同时支持输入`numeric`、`category`以及`sequence`类型变量。两个`single`网络在末端输出相同维度的`vector`。通过自研的`List-HingeLoss`进行约束优化。
 该loss相比`logisticLoss`和YouTube的`crossEntropyLoss`分别有10%和4%左右的召回提升。
 
