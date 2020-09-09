@@ -8,7 +8,7 @@ torch==1.5.1
 faiss==1.6.3
 ```
 
-网络由两个结构类似的`single`网络组成，同时支持输入`numeric`、`category`以及`sequence`类型变量。两个`single`网络在末端输出相同维度的`vector`。通过自研的`List-HingeLoss`进行约束优化。
+网络由两个结构类似的`single`网络组成，同时支持输入`numeric`、`category`以及`sequence`类型变量。两个`single`网络在末端输出相同维度的`vector`。通过自研的`HingeLoss`进行约束优化。
 该loss相比`logisticLoss`和YouTube的`crossEntropyLoss`分别有10%和4%左右的召回提升。
 
 网络基于torch==1.5.1和faiss实现，支持LocalData和MemoryData两种训练模式，分别适用于不进入内存和进入内存的两种训练模式。均支持多线程加速。
